@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Мокрый Фасад ДВ</title>
+
+	<meta property="og:title" content="" />
+	<meta property="og:description" content="" />
+	<meta name="og:locale" content="ru_RU">
+    <meta property="og:image" content="{% static 'web/img/meta-logo.png' %}" />
+
+    <link rel="canonical" href="" />
+	<link rel="shortcut icon" href="{% static 'web/img/favicon.ico' %}" type="image/x-icon">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'web/css/main.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'web/css/include.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'web/css/mobile.css' %}">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'web/fonts/roboto.css' %}">
+
+	<link rel="stylesheet" href="{% static 'web/splide/dist/css/splide.min.css' %}">
+	<script src="{% static 'web/splide/dist/js/splide.min.js' %}"></script>
+	<script>
+		document.addEventListener( 'DOMContentLoaded', function() {
+			var splide = new Splide( '.splide', {
+				type   : 'loop'
+			} );
+			splide.mount();
+		} );
+	</script>
+</head>
+<body>
+	{% block content %}
+		{% include 'include/nav.html' %}
+
+
+
+		<div id="wrapper" class="section">
+			<div class="title">
+				<h1>{{Service.Name}}</h1>
+				<div class="title_way">
+					<div style="display: block;">
+						<a href="/">Главная</a> / <a href="/service">Услуги</a>  / {{Service.Name}}
+					</div>
+				</div>
+			</div>
+
+			<div class="about_block">
+				<div class="about_image_container">
+					{% if Service.Images.all|length >= 1 %}
+						<div class="splide">
+							<div class="splide__track">
+								<ul class="splide__list">
+									<img src="{{Service.Image.url}}" alt=" " class="splide__slide">
+									{% for Image in Service.Images.all %}
+										<img src="/media/{{Image}}" alt=" " class="splide__slide">
+									{% endfor %}
+								</ul>
+							</div>
+						</div>
+					{% else %}
+						<img src="{{Service.Image.url}}" alt=" " class="splide__slide">
+					{% endif %}
+				</div>
+				<div class="about_info">
+					<h2>{{Service.Name}}</h2>
+					<span>{{Service.Description}}</span>
+					<div class="about_bottom">
+						<span>
+							<b>Цена: </b>{{Service.Price}} руб.
+						</span>
+						<a href="/contacts" class="button" style="max-width: 150px;">
+							Заказать
+							<img src="{% static 'web/img/icons/right.png' %}" height="15px">
+						</a>
+					</div>
+				</div>
+			</div>
+			
+			
+
+		</div>
+
+
+
+		{% include 'include/footer.html' %}
+	{% endblock %}
+</body>
+</html>

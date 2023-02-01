@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Мокрый Фасад ДВ</title>
+
+	<meta property="og:title" content="" />
+	<meta property="og:description" content="" />
+	<meta name="og:locale" content="ru_RU">
+    <meta property="og:image" content="{% static 'web/img/meta-logo.png' %}" />
+
+    <link rel="canonical" href="" />
+	<link rel="shortcut icon" href="{% static 'web/img/favicon.ico' %}" type="image/x-icon">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'web/css/main.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'web/css/include.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'web/css/mobile.css' %}">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'web/fonts/roboto.css' %}">
+</head>
+<body>
+	{% block content %}
+		{% include 'include/nav.html' %}
+
+		<div id="wrapper" class="section">
+			<div class="title">
+				<h1>Контакты</h1>
+				<div class="title_way">
+					<div style="display: block;">
+						<a href="/">Главная</a> / Контакты
+					</div>
+				</div>
+			</div>
+
+			<div class="contacts_block">
+				<span style="display: block">
+					<b>Телефон</b><br>
+					<a href="tel:89941381855">+7 (994) 138-18-55</a><br>
+					<a href="tel:89941381855">+7 (994) 138-18-55</a>
+				</span>
+				<br>
+				<span style="display: block">
+					<b>Почта</b><br>
+					<a href="mailto:sunha@yandex.ru">sunha@yandex.ru</a>
+				</span>
+				
+			</div>
+
+			<div class="contacts_block" id="about">
+				<div class="title_way">
+					<div style="display: block;">
+						О нас
+					</div>
+				</div>
+				<br><br>
+				Основная доктрина нашей компании — это качество. Неважно чем ты занимаешься: строительством дома или ремонтом ванной, каждое дело должно быть выполнено на совесть и доведено до логического конца.
+				<br><br>
+				В нашем хабаровском климате очень важно подойти к вопросу утепления качественно. Существует множество причин, почему в доме может быть холодно: плохо подобранный утеплитель, его намокание, щели, плохо спроектированная вентиляция и так далее. Наша компания понимает всё это и поэтому подойдёт ответственно к вопросам энергоэффективности в вашем доме.
+				<br><br>
+				Мы поможем украсить ваш дом любым понравившимся вам фасадом, будь-то сайдинг, вентилируемый, мокрый фасад; поможем с кровлей, неважно плоская у вас крыша или скатная; а также обращайтесь к нам, если желаете с нуля построить свой собственный дом.
+			</div>
+
+			<div class="contacts_block" id="job">
+				<div class="title_way">
+					<div style="display: block;">
+						Активные вакансии
+					</div>
+				</div>
+				<div class="contacts_jobs">
+					{% for Job in Jobs %}
+					<div class="contacts_jobs_el">
+						<b>{{Job.Name}}</b><br><br>
+						{{Job.Description}}
+						<span class="contacts_jobs_el_salary">
+							{% if Job.Salary == 0 %}
+								<b>Зарплата:</b> по договоренности
+							{% else  %}
+								<b>Зарплата:</b> от {{Job.Salary}} руб.
+							{% endif  %}
+						</span>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+
+		</div>
+
+		{% include 'include/footer.html' %}
+	{% endblock %}
+</body>
+</html>

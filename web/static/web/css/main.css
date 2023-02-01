@@ -1,0 +1,283 @@
+html
+{
+	font-size: 62.5%;
+}
+body
+{
+	position: relative;
+	padding: 0;
+	margin: 0;
+	font-size: 1.6rem;
+	background-color: #f5f5f5;
+	font-family: Roboto, "Open Sans",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+
+	min-height: 100vh;
+}
+
+#wrapper
+{
+	position: relative;
+	min-height: 80vh;
+	background-color: #f5f5f5;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+.button
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #BA1B1B;
+	border-radius: 3px;
+	padding: 5px 5px;
+	font-family: Roboto;
+	font-weight: 500;
+	color: white;
+}
+
+
+.section
+{
+	position: relative;
+	margin: 70px auto 40px auto;
+    max-width: 1100px;
+}
+.content
+{
+	position: relative;
+	max-width: 1100px;
+	margin: 0px auto;
+	/*padding: 0 20px;*/
+}
+
+.banner
+{
+	position: relative;
+	width: 100%;
+	min-height: 450px;
+	background-position: center;
+	background-size: cover;
+	background-image: url(../img/index-preview.png);
+}
+.banner_info
+{
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 60px 0 40px 0;
+	font-size: 2rem;
+	color: white;
+}
+
+.banner_info span
+{
+	display: block;
+	margin-bottom: 20px;
+}
+
+
+.advantage_card
+{
+	display: grid;
+	grid-template-columns: 30px 1fr;
+	grid-column-gap: 15px;
+	margin-bottom: 25px;
+}
+.advantage_card_number
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 35px;
+	height: 35px;
+	border-radius: 100%;
+	font-size: 2.5rem;
+	font-weight: 800;
+	background-color: #BA1B1B;
+	color: white;
+}
+.advantage_card_name
+{
+	font-size: 2rem;
+	font-weight: 500;
+}
+
+.index_service li
+{
+	margin-bottom: 10px;
+}
+.index_contacts
+{
+	position: relative;
+}
+.index_contacts_worker
+{
+	position: absolute;
+	right: 0;
+	bottom: -45px;
+	z-index: 1;
+}
+
+.title h1
+{
+	margin-bottom: 10px;
+}
+.title_way
+{
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	font-size: 1.8rem;
+	background-color: #BA1B1B;
+	color: white;
+	height: 35px;
+	padding-right: 30px;
+}
+.title_way:before
+{
+	position: absolute;
+	content: "";
+	left: -1000%;
+	top: 0;
+	background-color: #BA1B1B;
+	width: 1000%;
+	height: 35px;
+}
+.title_way a:hover
+{
+	text-decoration: underline;
+}
+
+
+.card_block
+{
+	margin-bottom: 50px;
+}
+.card_container
+{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 250px);
+	grid-gap: 30px;
+
+}
+.card
+{
+	position: relative;
+	width: 230px;
+	height: 270px;
+	background-color: white;
+	box-shadow: 0 0 10px 3px lightgray;
+	font-size: 1.8rem;
+	padding: 10px;
+}
+.card img
+{
+	width: 100%;
+	height: 140px;
+	object-fit: cover;
+}
+.card_title
+{
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 4; /* количество строк */
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.text_button
+{
+	color: #BA1B1B;
+	position: absolute;
+	left: 10px;
+	bottom: 10px;
+	font-size: 1.6rem;
+	font-weight: 500;
+}
+
+.about_block
+{
+	display: grid;
+	grid-template-columns: 480px 1fr;
+	grid-gap: 40px;
+	margin: 40px 0;
+	font-size: 1.8rem;
+}
+.about_image_container, .splide__slide
+{
+	width: 480px;
+	height: 270px;
+	border-radius: 2px;
+}
+.about_info
+{
+	position: relative;
+}
+.about_info h2
+{
+	margin-top: 0;
+}
+
+.about_bottom
+{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+.about_bottom span
+{
+	display: block;
+	margin-bottom: 10px;
+}
+
+.certificate_block
+{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 330px);
+	justify-content: space-between;
+	grid-gap: 40px;
+	margin: 40px 0;
+	border-radius: 3spx;
+}
+.certificate
+{
+	width: 330px;
+	height: 450px;
+	background-color: white;
+	box-shadow: 0 0 3px 2px lightgray;
+}
+.certificate img
+{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+
+.contacts_block
+{
+	display: block;
+	margin: 20px 0 80px 0;
+	font-size: 1.8rem;
+}
+.contacts_jobs
+{
+	margin: 20px 0;
+}
+.contacts_jobs_el
+{
+	box-shadow: 0 0 4px 2px lightgray;
+	padding: 10px;
+	max-width: 700px;
+	margin-bottom: 30px;
+}
+.contacts_jobs_el_salary
+{
+	display: block;
+	text-align: right;
+	margin-top: 30px;
+}

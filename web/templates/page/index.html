@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	{% load static %}
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Мокрый Фасад ДВ</title>
+
+	<meta property="og:title" content="" />
+	<meta property="og:description" content="" />
+	<meta name="og:locale" content="ru_RU">
+    <meta property="og:image" content="{% static 'web/img/meta-logo.png' %}" />
+
+    <link rel="canonical" href="" />
+	<link rel="shortcut icon" href="{% static 'web/img/favicon.ico' %}" type="image/x-icon">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'web/css/main.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'web/css/include.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'web/css/mobile.css' %}">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'web/fonts/roboto.css' %}">
+</head>
+<body>
+	{% block content %}
+		{% include 'include/nav.html' %}
+
+		<section class="banner">
+			<div class="banner_info">
+				<h1>
+					Каркасное строение домов и<br> отделка фасадов
+					<br>в <a style="color: #BA1B1B">Хабаровске</a>
+				</h1>
+				<span>
+					Производим работы по каркасным строениям домов <br>и отделке фасадов, строго по технологии с наличием<br> необходимой сертификации 
+				</span>
+				<a href="/service" class="button" style="max-width: 150px;">
+					Подобнее
+					<img src="{% static 'web/img/icons/right.png' %}" height="15px">
+				</a>
+			</div>
+		</section>
+
+		<section class="section">
+			<h2 class="section_title">Преимущества нашего метода</h2>
+			<div class="advantage_card">
+				<div class="advantage_card_number">1</div>
+				<div class="advantage_card_name">Теплоэффективность</div>
+				<div></div>
+				<div class="advantage_card_description">При относительно низкой стоимости, вы получите хороший, крепкий дом и низкие затраты на отопление. Теплу просто некуда будет уходить.</div>
+			</div>
+			<div class="advantage_card">
+				<div class="advantage_card_number">2</div>
+				<div class="advantage_card_name">Экологичность</div>
+				<div></div>
+				<div class="advantage_card_description">В жилищный цикл здания входит не только его постройка и эксплуатация, но и утилизация. Каркасные дома строятся из дерева, которое будет гораздо легче утилизировать, нежели камень или кирпич.</div>
+			</div>
+			<div class="advantage_card">
+				<div class="advantage_card_number">3</div>
+				<div class="advantage_card_name">Скорость</div>
+				<div></div>
+				<div class="advantage_card_description">Скорость строительства каркасных домов выше, чем у каменных аналогов.</div>
+			</div>
+		</section>
+
+		<!-- ДОБАВИТЬ НАШИ РАБОТЫ -->
+
+		<section class="section">
+			<h2 class="section_title">Про технологию</h2>
+			Каркасные дома являются альтернативой для более привычных нам кирпичных домов. Их основной плюс и одновременно минус заключается в том, что в процессе строительства используется гораздо меньше материала, что удешевляет весь процесс возведения здания, но повышает требования к точности монтажа всех элементов.<br>
+			Кирпичные стены обладают порой избыточной несущей способностью, которая по сути не используется на полную в процессе эксплуатации здания. Эту проблему как раз таки решает каркас, основная идея которого состоит в том, чтобы убрать ненужное количество материала, концентрируя всю нагрузку на стойки, сечение которых предварительно подбирается по расчётам таким образом, чтобы обеспечить необходимую долговечность. Таким образом мы получаем всё такое же прочное здание затрачивая меньше ресурсов. Но вместе с этим сборка каркаса требует высокой квалификации рабочих, потому что прочность конструкции зависит от точности монтажа каждого элемента. Поэтому рекомендуется подходить ответственно к выбору компании, осуществляющей строительство.
+			<br><br>
+			“Мокрый фасад” называется так, потому что в его основе лежат штукатурные работы. Мы вкладываем в это понятие монтаж утеплителя, его оштукатуривание и нанесение поверх декоративного слоя, который может быть представлен в виде краски или декоративной штукатурки (по желанию заказчика).<br>
+			Плюс мокрого фасада в том, что создаётся "эффект термоса". Подобранная нашими специалистами толщина утеплителя сможет обеспечить минимальные потери тепла, через стены.
+		</section>
+
+		<section class="section">
+			<h2 class="section_title">Мы предоставляем услуги</h2>
+			<ul class="index_service">
+				{% for Category in Categorys %}
+				<li>{{Category.Name}}</li>
+				{% endfor %}
+			</ul>
+			<a href="/service" class="button" style="max-width: 170px;">
+				Наши услуги
+				<img src="{% static 'web/img/icons/right.png' %}" height="15px">
+			</a>
+		</section>
+
+		<section class="section index_contacts">
+			<h2 class="section_title">Нужна консультация?</h2>
+			Остались вопросы по нашим работам или технологиям,<br> или вы хотите заказать наши работы сейчас?<br><br>
+			Свяжитесь с нами любым удобным для вас способом, и мы бесплатно<br>проконсультируем вас по всем вопросам, связанными с нашими работами.
+			<br><br>
+			<a href="/contacts" class="button" style="max-width: 150px;">
+				Контакты
+				<img src="{% static 'web/img/icons/right.png' %}" height="15px">
+			</a>
+			<img src="{% static 'web/img/worker.png' %}" class="index_contacts_worker">
+		</section>
+
+		{% include 'include/footer.html' %}
+	{% endblock %}
+</body>
+</html>

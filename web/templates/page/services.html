@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Мокрый Фасад ДВ</title>
+
+	<meta property="og:title" content="" />
+	<meta property="og:description" content="" />
+	<meta name="og:locale" content="ru_RU">
+    <meta property="og:image" content="{% static 'web/img/meta-logo.png' %}" />
+
+    <link rel="canonical" href="" />
+	<link rel="shortcut icon" href="{% static 'web/img/favicon.ico' %}" type="image/x-icon">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'web/css/main.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'web/css/include.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'web/css/mobile.css' %}">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'web/fonts/roboto.css' %}">
+</head>
+<body>
+	{% block content %}
+		{% include 'include/nav.html' %}
+
+
+
+		<div id="wrapper" class="section">
+			<div class="title">
+				<h1>Услуги</h1>
+				<div class="title_way">
+					<div style="display: block;">
+						<a href="/">Главная</a> / Услуги
+					</div>
+				</div>
+			</div>
+
+			
+			{% for Category in Categorys %}
+			<div class="card_block">
+				<h2>{{Category.Name}}</h2>
+				<div class="card_container">
+					{% for Service in Category.category_service.all %}
+					<a href="/service/{{Service.id}}" class="card">
+						<img src="{{Service.Image.url}}">
+						<span class="card_title">
+							{{Service.Name}}
+						</span>
+						<span class="text_button">Подробнее >></span>
+					</a>
+					{% endfor %}
+				
+				</div>
+			</div>
+			{% endfor %}
+
+		</div>
+
+
+
+		{% include 'include/footer.html' %}
+	{% endblock %}
+</body>
+</html>

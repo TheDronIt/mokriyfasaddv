@@ -1,0 +1,50 @@
+@media screen and (max-width: 980px)
+{
+	.section
+	{
+		padding: 0 20px;
+	}
+	.banner_info
+	{
+		padding: 0 20px;
+	}
+	.banner_info h1
+	{
+		margin: 0;
+		padding-top: 80px;
+	}
+	.index_contacts_worker
+	{
+		position: relative;
+	}
+	.card_container, .certificate_block
+	{
+		justify-content: center;
+	}
+	.about_block
+	{
+		grid-template-columns: 1fr	;
+	}
+	.about_image_container, .splide__slide
+	{
+		width: 100%;
+		height: auto;
+	}
+	.about_bottom
+	{
+		position: relative;
+	}
+	.title_way 
+	{
+		height: 40px;
+	}
+	.title_way:before
+	{
+		height: 40px;
+	}
+	.index_contacts_worker
+	{
+		max-width: 90%;
+		object-fit: cover;
+	}
+}	
