@@ -40,6 +40,7 @@
 			</div>
 		</section>
 
+
 		<section class="section">
 			<h2 class="section_title">Преимущества нашего метода</h2>
 			<div class="advantage_card">
@@ -62,7 +63,21 @@
 			</div>
 		</section>
 
-		<!-- ДОБАВИТЬ НАШИ РАБОТЫ -->
+		<section class="section">
+			<h2 class="section_title">Наши работы</h2>
+			<div class="card_container">
+					{% for Portfolio in Portfolios %}
+						<a href="/portfolio/{{Portfolio.id}}" class="card">
+							<img src="{{Portfolio.Image.url}}">
+							<span class="card_title">
+								{{Portfolio.Name}}
+							</span>
+							<span class="text_button">Подробнее >></span>
+						</a>
+					{% endfor %}
+				</div>
+			</div>
+		</section>
 
 		<section class="section">
 			<h2 class="section_title">Про технологию</h2>

@@ -5,8 +5,10 @@ from .models import *
 
 def index__page(request):
 	category = Category.objects.filter(Visibility="Отображать")
+	portfolios = Portfolio.objects.filter(Visibility="Отображать")[:8]
 	data = {
-		"Categorys": category
+		"Categorys": category,
+		"Portfolios": portfolios
 	}
 	return render(request, 'page/index.html', data)
 
