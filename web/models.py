@@ -26,6 +26,16 @@ class ServiceImage(models.Model):
 	def __str__(self):
 		return str(self.Image)
 
+	def save(self):
+        super().save()
+
+        img = Image.open(self.Image.path)
+
+        if img.height > 300 or img.width > 300:
+            output_size = (300, 300)
+            img.thumbnail(output_size)
+            img.save(self.Image.path)
+
 
 class Service(models.Model):
 	class Meta:
@@ -47,6 +57,16 @@ class Service(models.Model):
 
 	def __str__(self):
 		return str(self.Name)
+
+	def save(self):
+        super().save()
+
+        img = Image.open(self.Image.path)
+
+        if img.height > 300 or img.width > 300:
+            output_size = (300, 300)
+            img.thumbnail(output_size)
+            img.save(self.Image.path)
 
 
 class Certificate(models.Model): 
