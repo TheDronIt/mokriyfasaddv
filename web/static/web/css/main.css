@@ -212,6 +212,7 @@ a {
 	width: 480px;
 	height: 270px;
 	border-radius: 2px;
+	object-fit: cover;
 }
 .about_info
 {
@@ -221,13 +222,20 @@ a {
 {
 	margin-top: 0;
 }
-
+.about_bottom_info
+{
+	display: block;
+	min-height: 130px;
+	margin-bottom: 20px;
+}
+/*
 .about_bottom
 {
 	position: absolute;
 	left: 0;
 	bottom: 0;
 }
+*/
 .about_bottom span
 {
 	display: block;
